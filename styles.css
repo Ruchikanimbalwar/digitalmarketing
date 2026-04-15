@@ -1,119 +1,121 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f5;
 }
 
 /* NAVBAR */
-.topnav {
+.navbar {
+  position: fixed;
+  width: 100%;
   background: black;
+  color: white;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 15px 40px;
-  position: relative;
+  padding: 20px 50px;
+  z-index: 1000;
+}
+
+.navbar nav a {
+  color: white;
+  margin-left: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #ffce44;
 }
 
 .logo {
-  height: 50px;
-}
-
-.topnav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-}
-
-.topnav-centered {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.topnav-right {
-  display: flex;
+  font-weight: bold;
+  font-size: 24px;
+  color: #ffce44;
 }
 
 /* HERO */
-.main-container {
+.hero {
   position: relative;
+  height: 100vh;
 }
 
 .hero-img {
   width: 100%;
-  height: 750px;
+  height: 100%;
   object-fit: cover;
 }
 
-.overlay {
+.hero-overlay {
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
+  color: white;
   text-align: center;
 }
 
-.weare span {
-  font-size: 40px;
-  font-weight: bold;
-  margin: 0 10px;
-}
-
-.studio {
-  font-size: 140px;
-  font-weight: bold;
-  letter-spacing: 5px;
-}
-
-.tagline {
-  margin-top: 20px;
-  font-size: 18px;
-  color: white;
-}
-
-/* WORKS */
-.yellowbox {
-  background: #FFCE44;
-  padding: 80px 40px;
-}
-
-.works-text h1 {
+.hero-overlay h1 {
   font-size: 70px;
-  margin-bottom: 10px;
 }
 
-.works-text p {
+.hero-overlay span {
+  color: #ffce44;
+}
+
+.hero-overlay p {
   font-size: 18px;
+  margin-top: 10px;
 }
 
-.works-images {
+/* WORK */
+.work {
+  background: #ffce44;
+  padding: 80px 50px;
+}
+
+.work-text h2 {
+  font-size: 50px;
+}
+
+.work-grid {
   display: flex;
-  gap: 40px;
-  margin-top: 50px;
+  gap: 30px;
+  margin-top: 40px;
 }
 
-.works-images img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
+.card {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.card img {
+  width: 100%;
+  transition: 0.4s;
+}
+
+.card:hover img {
+  transform: scale(1.1);
 }
 
 /* ABOUT */
 .about {
   display: flex;
+  padding: 80px 50px;
   align-items: center;
-  padding: 80px 40px;
+  gap: 50px;
 }
 
-.about-img {
-  width: 50%;
+.about-img img {
+  width: 500px;
+  border-radius: 10px;
 }
 
-.about-text {
-  width: 50%;
-  padding: 40px;
+.about-text h2 {
+  font-size: 50px;
 }
 
-.about-text h1 {
-  font-size: 60px;
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
 }
