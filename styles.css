@@ -1,11 +1,11 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
 }
 
-/* NAVBAR */
-.navbar {
+/* NAV */
+.nav {
   position: fixed;
   width: 100%;
   background: black;
@@ -13,71 +13,75 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 20px 50px;
-  z-index: 1000;
+  z-index: 100;
 }
 
-.navbar nav a {
+.links a {
   color: white;
   margin-left: 30px;
   text-decoration: none;
-  transition: 0.3s;
-}
-
-.navbar nav a:hover {
-  color: #ffce44;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 24px;
-  color: #ffce44;
 }
 
 /* HERO */
 .hero {
   position: relative;
   height: 100vh;
+  overflow: hidden;
 }
 
-.hero-img {
+.hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.hero-overlay {
+/* DARK OVERLAY (THIS is what you were missing) */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+}
+
+.hero-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
+  z-index: 2;
 }
 
-.hero-overlay h1 {
+.hero-text h1 {
   font-size: 70px;
 }
 
-.hero-overlay span {
+.hero-text span {
   color: #ffce44;
 }
 
-.hero-overlay p {
+.hero-text p {
   font-size: 18px;
   margin-top: 10px;
 }
 
 /* WORK */
 .work {
+  padding: 100px 0;
   background: #ffce44;
-  padding: 80px 50px;
 }
 
-.work-text h2 {
-  font-size: 50px;
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
 }
 
-.work-grid {
+.grid {
   display: flex;
   gap: 30px;
   margin-top: 40px;
@@ -85,8 +89,8 @@ body {
 
 .card {
   flex: 1;
-  overflow: hidden;
   border-radius: 15px;
+  overflow: hidden;
 }
 
 .card img {
@@ -96,26 +100,4 @@ body {
 
 .card:hover img {
   transform: scale(1.1);
-}
-
-/* ABOUT */
-.about {
-  display: flex;
-  padding: 80px 50px;
-  align-items: center;
-  gap: 50px;
-}
-
-.about-img img {
-  width: 500px;
-  border-radius: 10px;
-}
-
-.about-text h2 {
-  font-size: 50px;
-}
-
-.about-text p {
-  font-size: 18px;
-  line-height: 1.6;
 }
