@@ -1,103 +1,138 @@
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
 }
 
 /* NAV */
 .nav {
   position: fixed;
   width: 100%;
+  top: 0;
   background: black;
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 20px 50px;
-  z-index: 100;
+  padding: 20px 60px;
+  z-index: 1000;
 }
 
-.links a {
+.nav a {
   color: white;
   margin-left: 30px;
   text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #ffce44;
+}
+
+.logo {
+  font-weight: bold;
 }
 
 /* HERO */
 .hero {
-  position: relative;
   height: 100vh;
-  overflow: hidden;
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* DARK OVERLAY (THIS is what you were missing) */
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  top: 0;
-  left: 0;
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url("https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  z-index: 2;
+  color: white;
 }
 
-.hero-text h1 {
-  font-size: 70px;
+.hero-content h1 {
+  font-size: 60px;
 }
 
-.hero-text span {
-  color: #ffce44;
-}
-
-.hero-text p {
+.hero-content p {
+  margin: 15px 0;
   font-size: 18px;
-  margin-top: 10px;
+}
+
+.hero button {
+  padding: 12px 25px;
+  border: none;
+  background: #ffce44;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 /* WORK */
 .work {
-  padding: 100px 0;
-  background: #ffce44;
-}
-
-.container {
-  width: 80%;
-  margin: auto;
+  padding: 100px 60px;
+  background: #f4f4f4;
   text-align: center;
 }
 
-.grid {
+.work h2 {
+  font-size: 40px;
+}
+
+.work-grid {
   display: flex;
   gap: 30px;
   margin-top: 40px;
 }
 
-.card {
+.work-card {
   flex: 1;
-  border-radius: 15px;
   overflow: hidden;
+  border-radius: 12px;
 }
 
-.card img {
+.work-card img {
   width: 100%;
   transition: 0.4s;
 }
 
-.card:hover img {
+.work-card:hover img {
   transform: scale(1.1);
+}
+
+/* ABOUT */
+.about {
+  display: flex;
+  padding: 100px 60px;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-left {
+  flex: 1;
+}
+
+.about-left h2 {
+  font-size: 40px;
+}
+
+.about-left p {
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+.about-right {
+  flex: 1;
+}
+
+.about-right img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+.footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
